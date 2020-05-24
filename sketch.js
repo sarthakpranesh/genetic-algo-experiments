@@ -7,8 +7,10 @@ var pipes = [];
 function setup() {
   canvas = createCanvas(WIDTH, HEIGHT - 40), WebGL2RenderingContext;
   canvas.parent('canvasDiv');
-  slider = createSlider(1, 100, 1);
-  slider.parent('frameRate');
+  learningSpeed = createSlider(1, 100, 1);
+  learningSpeed.parent('learningSpeed');
+  barGap = createSlider(FRAMER/2, FRAMER, FRAMER);
+  barGap.parent('barGap');
   for (let i = 0; i < TOTAL; i++) {
     birds[i] = new Bird();
   }
@@ -27,8 +29,8 @@ function draw() {
   }
 
   // main logic computation
-  for (let n = 0; n < slider.value(); n++ ) {
-    if (count % FRAMER == 0) {
+  for (let n = 0; n < learningSpeed.value(); n++ ) {
+    if (count % barGap.value() == 0) {
       pipes.push(new Pipe())
     }
 
@@ -49,21 +51,6 @@ function draw() {
       return true;
     });
 
-    // for (var i = pipes.length - 1; i >= 0; i--) {
-    //   pipes[i].update();
-  
-    //   for (let j = birds.length-1; j >= 0; j--) {
-    //     if (pipes[i].hits(birds[j])) {
-    //       saveBirds.push(birds[j]);
-    //       birds.splice(j, 1);
-    //     }
-    //   }
-  
-    //   if (pipes[i].offscreen()) {
-    //     pipes.splice(i, 1);
-    //   }
-    // }
-
     birds.forEach((bird) => {
       bird.think(pipes);
       bird.update()
@@ -75,7 +62,6 @@ function draw() {
       numberOfGenerations++;
       pipes = [];
       pipes.push(new Pipe())
-      console.log("Number of Generations: ", numberOfGenerations);
     }
 
     count++;
