@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: stretch;
+}
+
+.canvasDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.p5Canvas {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  align-self: center;
+}
+
+.settingDiv {
+  margin: auto 5vw;
+}
+
+.frameRate {
+  margin: 20px;
+}
