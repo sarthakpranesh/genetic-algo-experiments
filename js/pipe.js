@@ -3,10 +3,10 @@ function Pipe() {
   this.top = random(height/2);
   this.bottom = height - this.top - this.gap;
   this.x = width;
-  this.w = 20;
+  this.w = 50;
 
   this.show = function() {
-    fill(255);
+    fill(0, 255, 0);
     if (this.highlight) {
       fill(255, 0, 0);
     }

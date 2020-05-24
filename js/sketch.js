@@ -5,27 +5,31 @@ var saveBirds = []
 var pipes = [];
 
 function setup() {
-  canvas = createCanvas(WIDTH, HEIGHT - 40), WebGL2RenderingContext;
+  canvas = createCanvas(WIDTH, HEIGHT - 40);
   canvas.parent('canvasDiv');
   learningSpeed = createSlider(1, 100, 1);
   learningSpeed.parent('learningSpeed');
-  barGap = createSlider(FRAMER/2, FRAMER, FRAMER);
+  barGap = createSlider(FRAMER/4, FRAMER, FRAMER);
   barGap.parent('barGap');
+
+  // get reference to document ele
+  curSpeed = document.getElementById('curSpeed');
+  curBarGap = document.getElementById('curBarGap');
+
+  // load assets
+  bg = loadImage('/images/bg.png');
   for (let i = 0; i < TOTAL; i++) {
     birds[i] = new Bird();
   }
 }
 
 function draw() {
-
-  if (isUser) {
-    background(100);
-    for (let bird of birds) {
-      bird.show();
-    }
-    for (let pipe of pipes) {
-      pipe.show();
-    }
+  background(bg);
+  for (let bird of birds) {
+    bird.show();
+  }
+  for (let pipe of pipes) {
+    pipe.show();
   }
 
   // main logic computation
@@ -65,5 +69,9 @@ function draw() {
     }
 
     count++;
+
+    // show values
+    curSpeed.innerText = learningSpeed.value();
+    curBarGap.innerText = barGap.value();
   }
 }
