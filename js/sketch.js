@@ -7,7 +7,7 @@ var pipes = [];
 function setup() {
   canvas = createCanvas(WIDTH, HEIGHT - 40);
   canvas.parent('canvasDiv');
-  learningSpeed = createSlider(1, 100, 1);
+  learningSpeed = createSlider(1, LEARNING_RATE, 1);
   learningSpeed.parent('learningSpeed');
   barGap = createSlider(FRAMER/4, FRAMER, FRAMER);
   barGap.parent('barGap');
@@ -67,7 +67,7 @@ function draw() {
       pipes = [];
       pipes.push(new Pipe())
     }
-
+    console.log(count);
     count++;
 
     // show values
