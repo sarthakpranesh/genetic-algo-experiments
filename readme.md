@@ -1,5 +1,5 @@
 # Genetic Flappy Bird
-This small project was build using a small custom implementation of Neural Network build by [Coding Train](https://github.com/CodingTrain/Toy-Neural-Network-JS/), P5js and Bootstrap. The same can be replicated using [tensorflow.js](https://www.tensorflow.org/js).
+This small project was build using a small custom implementation of Neural Network, P5js and Bootstrap. The same can be replicated using [tensorflow.js](https://www.tensorflow.org/js).
 <p>
 The main reason behind using custom implementation of Neural Network was that it is more light weight and can be easily tweaked further for a specific problem.
 </p>
