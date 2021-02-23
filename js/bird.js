@@ -65,7 +65,7 @@ class Bird {
 
   mutate () {
     this.brain.mutate(function (x) {
-      return x + randomGaussian(0, 0.1);
+      return x + randomGaussian(0, 0.001);
     })
   }
 }

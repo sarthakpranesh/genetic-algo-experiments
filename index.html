@@ -1,42 +1,56 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Automated Flappy Bird game using Genetic Algorithm and custom Neural NetWork (thanks to Coding Train)">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Flappy Bird, Genetic Algorithm, Neural Network, Coding Train">
+    <meta name="description" content="Custom Genetic Learning algorithm examples: Flappy Bird and Fish">
+    <meta name="keywords" content="Genetic Algorithm, Neural Network, Flappy Bird">
     <meta name="author" content="Sarthak Pranesh">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="/js/p5.js"></script>
-    <script src="/js/consts.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
   </head>
-  <body class="container">
-    <header style="align-self: center; margin-top: 10px;">
-      <h1>Genetic Flappy Birds</h1>
-    </header>
-    <div class="canvasDiv" id="canvasDiv"></div>
-    <div class="settingDiv">
-      <div class="innerSettingContainer">
-        <h3>Make the learning faster:</h3>
-        Current Speed: <span id="curSpeed"></span>
-        <div class="slider" id="learningSpeed"></div>
-      </div>
+  <body>
+    <div class="container">
+        <h1>
+            Genetic Algorithm Learning Experiments
+        </h1>
+        <p>
+            Genetic Algorithm or for short GA is a search based 
+            optimization technique based on the principle and concept 
+            of Genetic evolution and Natural Selection. In more simple 
+            words it's similar to survival of the fittest. Where in a 
+            given population only those individuals are selected that 
+            are best suited for a particular task.
+        </p>
+        <p>
+            This small project was build using a small custom 
+            implementation of Neural Network along with P5js and Bootstrap. 
+            The same can be replicated using tensorflow.js.
 
-      <div class="innerSettingContainer">
-        <h3>Make the Bar Gap smaller:</h3>
-        Current Gap: <span id="curBarGap"></span>
-        <div class="slider" id="barGap"></div>
-      </div>
-
+            The main reason behind using custom implementation of 
+            Neural Network was that it is more light weight and can be 
+            easily tweaked further for a specific problem.     
+        </p>
+    </div>
+    <div class="container">
+        <h2>
+            Experiments
+        </h1>
+        <ul>
+            <li>
+                <a href="/flappy.html">
+                    Flappy Birds
+                </a>
+                <p>
+                    This is a popular classic game, where we have 
+                    to make sure our little bird friend is able to avoid the 
+                    maximum amount of pipes it can. Therefor an ideal bird 
+                    would be the one which is able to slowly evolve in a 
+                    manner that allows it to avoid those pipes. In this 
+                    example we create a virtual environment and we extract 
+                    valuable features from the environment on which the birds 
+                    evolve on through successive generation.
+                </p>
+            </li>
+        </ul>
     </div>
   </body>
-  <script src="/js/mat.js"></script>
-  <script src="/js/brain.js"></script>
-  <script src="/js/ga.js"></script>
-  <script src="/js/bird.js"></script>
-  <script src="/js/pipe.js"></script>
-  <script src="/js/sketch.js"></script>
-  <link rel="stylesheet" href="/css/styles.css" > 
 </html>
