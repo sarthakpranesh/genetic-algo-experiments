@@ -30,7 +30,7 @@ class GeneticAlgorithm {
     } else {
       this.population = new Array(this.total).fill(1).map((_, i) => {
         const person = new this.type(bestDead.brain);
-        person.mutate(i / this.total);
+        person.mutate(i);
         return person;
       });
     }
