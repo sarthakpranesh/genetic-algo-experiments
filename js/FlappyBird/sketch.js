@@ -1,8 +1,7 @@
 let count = 0;
-let numberOfGenerations = 0;
-var birds = [];
-var saveBirds = []
 var pipes = [];
+
+let ga = new GeneticAlgorithm(Bird, TOTAL);
 
 function setup() {
   canvas = createCanvas(WIDTH, HEIGHT - 40);
@@ -18,14 +17,13 @@ function setup() {
 
   // load assets
   bg = loadImage('/images/bg.png');
-  for (let i = 0; i < TOTAL; i++) {
-    birds[i] = new Bird();
-  }
 }
 
 function draw() {
   background(bg);
-  for (let bird of birds) {
+  
+  // update the sketch position of all bodies
+  for (let bird of ga.population) {
     bird.show();
   }
   for (let pipe of pipes) {
@@ -41,9 +39,9 @@ function draw() {
     pipes = pipes.filter(pipe => {
       pipe.update();
 
-      birds = birds.filter((bird) => {
+      ga.population = ga.population.filter((bird) => {
         if (pipe.hits(bird)) {
-          saveBirds.push(bird);
+          ga.dead.push(bird);
           return false;
         }
         return true;
@@ -55,19 +53,20 @@ function draw() {
       return true;
     });
 
-    birds.forEach((bird) => {
+    // update everyone in population
+    ga.population.forEach((bird) => {
       bird.think(pipes);
       bird.update()
     });
 
-    if (birds.length === 0) {
+    // run when no one left in population
+    if (ga.population.length === 0) {
+      ga.createNextGeneration();
+
       count = 0;
-      nextGeneration();
-      numberOfGenerations++;
       pipes = [];
       pipes.push(new Pipe())
     }
-    console.log(count);
     count++;
 
     // show values

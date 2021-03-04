@@ -35,6 +35,9 @@ function Pipe() {
       }
     }
     this.highlight = false;
+    if (bird.x > this.x + this.w) {
+      bird.score = bird.score + 100;
+    }
     return false;
   }
 }
