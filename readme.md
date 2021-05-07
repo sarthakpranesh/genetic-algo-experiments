@@ -1,6 +1,6 @@
 # Genetic Algorithm Experiments
 
-This project displays how genetic algorithms can be implemented in real file with the help of intuitive examples such as flappy birds, big and small fish (coming soon), etc. This project was build using a small custom implementation of Neural Network along with libraries like P5js and Bootstrap.
+This project displays how genetic algorithms can be implemented in real file with the help of intuitive examples such as Flappy Birds, Prey and Predator fish, etc. This project was build using a small custom implementation of Neural Network along with libraries like P5js and Bootstrap.
 
 Genetic algorithms is a vast topic so we won't be able to cover everything, but we aim to still show the power of GAs. Visit us at the link below
 
